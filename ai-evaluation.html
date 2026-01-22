@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI Tool Evaluation - Lab 2 for DCDA 40833">
+    <meta name="author" content="Sean Crotty">
+    <title>AI Tool Evaluation | DCDA 40833 Skills Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Additional styles for Lab 2 specific layouts */
+
+        /* Full-width image section (breaks out of main container) */
+        .full-width-image {
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .full-width-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .full-width-image figcaption {
+            text-align: center;
+            font-style: italic;
+            color: var(--text-secondary);
+            padding: 0.5rem 1rem;
+            background: var(--bg-color);
+        }
+
+        /* Image gallery for multiple screenshots */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .image-gallery figure {
+            margin: 0;
+            text-align: center;
+        }
+
+        .image-gallery img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-gallery figcaption {
+            font-style: italic;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Tool comparison grid for image generators */
+        .tool-comparison {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .tool-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .tool-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.75rem;
+        }
+
+        .tool-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 0.5rem;
+        }
+
+        .tool-card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        /* Video comparison layout */
+        .video-comparison {
+            margin: 2rem 0;
+        }
+
+        .video-comparison .prompt-box {
+            background: linear-gradient(135deg, #f0e7f8, #e9d5ff);
+            border-left: 5px solid var(--secondary-color);
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .video-comparison .prompt-box strong {
+            color: var(--primary-color);
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .video-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .video-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.75rem;
+        }
+
+        .video-card video {
+            width: 100%;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Placeholder styling for images/videos not yet added */
+        .placeholder {
+            background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+            border: 3px dashed #94a3b8;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
+            font-weight: 500;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .placeholder.image {
+            min-height: 200px;
+        }
+
+        .placeholder.video {
+            min-height: 250px;
+            aspect-ratio: 16/9;
+        }
+
+        .placeholder.full-width {
+            min-height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="ai-evaluation.html">AI Evaluation</a></li>
+            <li><a href="tufte-critique.html">Tufte Critique</a></li>
+            <li><a href="tableau-visualization.html">Tableau Viz</a></li>
+            <li><a href="lab5.html">Lab 5</a></li>
+            <li><a href="hometown-map.html">Hometown Map</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <h1>AI Tool Evaluation</h1>
+        <p>Lab 2 | Exploring AI Capabilities and Limitations</p>
+    </header>
+
+    <main>
+        <!-- Section 1: Familiar AI Tools (Code Assistants) -->
+        <section id="familiar-tools">
+            <h2>AI Tools I Use Daily</h2>
+            <p>My primary experience with AI tools comes from code assistance. I regularly use Claude Code through two different interfaces: Cursor and Zed. These tools have fundamentally changed how I approach coding tasks, from writing boilerplate to debugging complex issues.</p>
+
+            <!-- IMAGE GALLERY: Screenshots of Claude Code in Cursor and Zed -->
+            <div class="image-gallery">
+                <figure>
+                    <!-- IMAGE: Screenshot of Claude Code in Cursor -->
+                    <div class="placeholder image">
+                        IMAGE PLACEHOLDER<br>
+                        Claude Code in Cursor interface<br>
+                        <small>(cursor-screenshot.png)</small>
+                    </div>
+                    <figcaption>Claude Code integrated into the Cursor IDE</figcaption>
+                </figure>
+
+                <figure>
+                    <!-- IMAGE: Screenshot of Claude Code in Zed -->
+                    <div class="placeholder image">
+                        IMAGE PLACEHOLDER<br>
+                        Claude Code in Zed interface<br>
+                        <small>(zed-screenshot.png)</small>
+                    </div>
+                    <figcaption>Claude Code integrated into the Zed editor</figcaption>
+                </figure>
+
+                <figure>
+                    <!-- IMAGE: Additional screenshot showing workflow -->
+                    <div class="placeholder image">
+                        IMAGE PLACEHOLDER<br>
+                        Additional interface screenshot<br>
+                        <small>(workflow-screenshot.png)</small>
+                    </div>
+                    <figcaption>Example of AI-assisted coding workflow</figcaption>
+                </figure>
+            </div>
+
+            <p>These tools excel at understanding context, generating code that follows existing patterns in a project, and explaining complex concepts. However, they work best when given clear, specific prompts and when the user can verify the output.</p>
+        </section>
+
+        <!-- FULL-WIDTH CHART IMAGE -->
+        <figure class="full-width-image">
+            <!-- IMAGE: Chart showing AI capabilities/limitations -->
+            <div class="placeholder full-width">
+                FULL-WIDTH IMAGE PLACEHOLDER<br>
+                Chart showing AI capabilities vs. limitations<br>
+                <small>(ai-capabilities-chart.png)</small>
+            </div>
+            <figcaption>Chart illustrating the relationship between AI capability and task complexity - my experience aligns closely with this model</figcaption>
+        </figure>
+
+        <!-- Section 2: Less Familiar Tools (Image & Video) -->
+        <section id="unfamiliar-tools">
+            <h2>Exploring Image and Video AI</h2>
+            <p>While I'm comfortable with code-focused AI tools, I have much less experience with image and video generation. This lab provided an opportunity to explore these tools and evaluate their current capabilities.</p>
+
+            <h3>Early Attempts: DALL-E (2023)</h3>
+            <p>My first experience with image generation came from DALL-E in 2023. The results were... interesting, but clearly showed the limitations of the technology at that time.</p>
+
+            <!-- IMAGE: DALL-E 2023 output -->
+            <figure class="viz-container">
+                <div class="placeholder image" style="max-width: 500px; margin: 0 auto;">
+                    IMAGE PLACEHOLDER<br>
+                    DALL-E output from 2023<br>
+                    <small>(dalle-2023-example.png)</small>
+                </div>
+                <figcaption>DALL-E image generation attempt from 2023 - note the artifacts and inconsistencies</figcaption>
+            </figure>
+        </section>
+
+        <!-- Section 3: Image Generation Tool Comparison -->
+        <section id="image-tools">
+            <h2>Image Generation Tool Comparison</h2>
+            <p>For this evaluation, I tested three current image generation tools using similar prompts to compare their outputs. Each tool has different strengths and approaches to image creation.</p>
+
+            <!-- IMAGE COMPARISON GRID -->
+            <div class="tool-comparison">
+                <div class="tool-card">
+                    <h4>Nano Banana (via Gemini)</h4>
+                    <!-- IMAGE: Nano Banana output -->
+                    <div class="placeholder image">
+                        IMAGE PLACEHOLDER<br>
+                        Nano Banana output<br>
+                        <small>(nano-banana-result.png)</small>
+                    </div>
+                    <p>Generated through the Gemini interface</p>
+                </div>
+
+                <div class="tool-card">
+                    <h4>Leonardo AI</h4>
+                    <!-- IMAGE: Leonardo AI output -->
+                    <div class="placeholder image">
+                        IMAGE PLACEHOLDER<br>
+                        Leonardo AI output<br>
+                        <small>(leonardo-result.png)</small>
+                    </div>
+                    <p>Standalone image generation platform</p>
+                </div>
+
+                <div class="tool-card">
+                    <h4>ChatGPT (DALL-E 3)</h4>
+                    <!-- IMAGE: ChatGPT/DALL-E 3 output -->
+                    <div class="placeholder image">
+                        IMAGE PLACEHOLDER<br>
+                        ChatGPT image output<br>
+                        <small>(chatgpt-result.png)</small>
+                    </div>
+                    <p>OpenAI's latest image generation</p>
+                </div>
+            </div>
+
+            <p>Each tool produced notably different results from the same prompt, highlighting how the underlying models and training data influence output style and quality.</p>
+        </section>
+
+        <!-- Section 4: Video Generation Tool Comparison -->
+        <section id="video-tools">
+            <h2>Video Generation Tool Comparison</h2>
+            <p>Video generation represents the cutting edge of AI creative tools. I tested two platforms: Runway and Pika. To make the comparison fair, I used identical text prompts for both tools.</p>
+
+            <!-- Video Comparison 1 -->
+            <div class="video-comparison">
+                <div class="prompt-box">
+                    <strong>Prompt 1:</strong> [Your text prompt will go here - describe what you asked both tools to generate]
+                </div>
+
+                <div class="video-grid">
+                    <div class="video-card">
+                        <h4>Runway</h4>
+                        <!-- VIDEO: Runway output for prompt 1 -->
+                        <div class="placeholder video">
+                            VIDEO PLACEHOLDER<br>
+                            Runway output<br>
+                            <small>(runway-prompt1.mp4)</small>
+                        </div>
+                    </div>
+
+                    <div class="video-card">
+                        <h4>Pika</h4>
+                        <!-- VIDEO: Pika output for prompt 1 -->
+                        <div class="placeholder video">
+                            VIDEO PLACEHOLDER<br>
+                            Pika output<br>
+                            <small>(pika-prompt1.mp4)</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Comparison 2 (add more as needed) -->
+            <div class="video-comparison">
+                <div class="prompt-box">
+                    <strong>Prompt 2:</strong> [Your second text prompt will go here]
+                </div>
+
+                <div class="video-grid">
+                    <div class="video-card">
+                        <h4>Runway</h4>
+                        <!-- VIDEO: Runway output for prompt 2 -->
+                        <div class="placeholder video">
+                            VIDEO PLACEHOLDER<br>
+                            Runway output<br>
+                            <small>(runway-prompt2.mp4)</small>
+                        </div>
+                    </div>
+
+                    <div class="video-card">
+                        <h4>Pika</h4>
+                        <!-- VIDEO: Pika output for prompt 2 -->
+                        <div class="placeholder video">
+                            VIDEO PLACEHOLDER<br>
+                            Pika output<br>
+                            <small>(pika-prompt2.mp4)</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Reflection -->
+        <section id="reflection">
+            <h2>Reflection: Evaluating AI Tools</h2>
+
+            <h3>Code Assistance Tools</h3>
+            <p>[Your reflection on Claude Code, Cursor, Zed - what works well, what are the limitations, how has it changed your workflow]</p>
+
+            <h3>Image Generation Tools</h3>
+            <p>[Your evaluation of Nano Banana, Leonardo AI, and ChatGPT for image generation - compare quality, ease of use, prompt adherence, artistic style]</p>
+
+            <h3>Video Generation Tools</h3>
+            <p>[Your evaluation of Runway vs Pika - compare motion quality, coherence, generation time, ease of use]</p>
+
+            <h3>Overall Assessment</h3>
+            <p>[Your broader reflection on AI tools in 2026 - capabilities, limitations, ethical considerations, future implications for digital culture]</p>
+
+            <h3>Key Takeaways</h3>
+            <ul>
+                <li>[Takeaway 1 about AI tool capabilities]</li>
+                <li>[Takeaway 2 about limitations you discovered]</li>
+                <li>[Takeaway 3 about practical applications]</li>
+                <li>[Takeaway 4 about implications for your field/teaching]</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p><a href="https://github.com/yourusername/your-repo-name">View Repository on GitHub</a></p>
+        <p>&copy; 2026 Sean M. Crotty | DCDA 40833 | TCU</p>
+    </footer>
+</body>
+</html>
